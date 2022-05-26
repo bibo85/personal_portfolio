@@ -3,7 +3,6 @@ from django.db import models
 
 class Blog(models.Model):
     title = models.CharField(max_length=200, verbose_name='Заголовок')
-    description = models.CharField(max_length=250, verbose_name='Краткое описание')
     text = models.TextField(verbose_name='Текст статьи')
     date = models.DateField(verbose_name='Дата')
     is_published = models.BooleanField(default=False, verbose_name='Статус публикации')

@@ -8,8 +8,8 @@
     <h1>Blog</h1>
         {% for blog in blogs %}
             <a href="{% url 'blog:detail' blog.id %}"><h2>{{ blog.title }}</h2></a>
-            <p>Дата: {{ blog.date|date:'d.m.Y' }}</p>
-            <p>{{ blog.description }}</p>
+            <p>{{ blog.date|date:'d.m.Y' }}</p>
+            <p>{{ blog.text|truncatechars:150 }}</p>
         {% empty%}
             <p>Записи еще не добавлены...</p>
         {% endfor %}

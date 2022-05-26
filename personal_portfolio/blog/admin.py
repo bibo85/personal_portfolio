@@ -4,5 +4,5 @@ from blog.models import Blog
 
 @admin.register(Blog)
 class BlogAdmin(admin.ModelAdmin):
-    list_display = ['title', 'description', 'is_published']
+    list_display = ['title', 'is_published']
     list_filter = ['is_published']
