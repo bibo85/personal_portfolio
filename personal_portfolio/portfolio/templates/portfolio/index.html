@@ -7,6 +7,7 @@
 </head>
 <body>
     <h1>My Projects</h1>
+    <a href="{% url 'blog:all_blogs' %}">Blog</a>
     <p>{{ text }}</p>
     <img src="{% static 'portfolio/me.jpg' %}" width="300">
     {% for project in projects %}
