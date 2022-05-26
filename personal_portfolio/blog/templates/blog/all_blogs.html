@@ -1,17 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Blog</title>
-</head>
-<body>
-    <h1>Blog</h1>
-        {% for blog in blogs %}
-            <a href="{% url 'blog:detail' blog.id %}"><h2>{{ blog.title }}</h2></a>
-            <p>{{ blog.date|date:'d.m.Y' }}</p>
-            <p>{{ blog.text|truncatechars:150 }}</p>
-        {% empty%}
-            <p>Записи еще не добавлены...</p>
-        {% endfor %}
-</body>
-</html>
+{% extends 'portfolio/base.html' %}
+
+{% block content %}
+
+<h1>Blog</h1>
+{% for blog in blogs %}
+    <a href="{% url 'blog:detail' blog.id %}"><h2>{{ blog.title }}</h2></a>
+    <p>{{ blog.date|date:'d.m.Y' }}</p>
+    <p>{{ blog.text|truncatechars:150 }}</p>
+{% empty%}
+    <p>Записи еще не добавлены...</p>
+{% endfor %}
+
+{% endblock %}
